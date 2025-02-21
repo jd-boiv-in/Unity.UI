@@ -1,0 +1,19 @@
+{
+  "name": "jd.boiv.in.ui",
+  "version": "1.0.0",
+  "displayName": "UI",
+  "description": "Some UI helper for Unity",
+  "dependencies": {
+    "jd.boiv.in.extensions": "1.0.0",
+    "jd.boiv.in.text": "1.0.0",
+    "jd.boiv.in.tween": "1.0.0"
+ },
+ "keywords": [
+    "tween"
+  ],
+  "author": {
+    "name": "Jean-Denis Boivin",
+    "email": "jd@boiv.in",
+    "url": "https://jd.boiv.in"
+  }
+}

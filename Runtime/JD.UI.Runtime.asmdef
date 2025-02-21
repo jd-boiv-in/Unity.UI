@@ -1,0 +1,20 @@
+{
+    "name": "JD.UI.Runtime",
+    "rootNamespace": "JD.UI",
+    "references": [
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:dc0a4fd05c166134fb1fea70443c5fd6",
+        "GUID:59f218d59ab530e4cbb4b04099aaed27",
+        "GUID:49279e8927f68334b9136ac056ddb55c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

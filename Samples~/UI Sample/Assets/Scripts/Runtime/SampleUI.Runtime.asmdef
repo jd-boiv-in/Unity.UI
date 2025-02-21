@@ -1,0 +1,16 @@
+{
+    "name": "SampleUI.Runtime",
+    "rootNamespace": "JD.Samples",
+    "references": [
+        "GUID:b28acd1292fe28e4da998430f4150537"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
