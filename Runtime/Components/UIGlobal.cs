@@ -85,13 +85,13 @@ namespace JD.UI.Components
             // Listens for touch up event and broadcast it globally
             // Useful to auto-hide tooltips
             // TODO: Do not use delegate to prevent alloc?
-            var touchedUp = false;
+            //var touchedUp = false;
             for (var i = 0; i < Touch.activeTouches.Count; i++)
             {
                 var touch = Touch.activeTouches[i];
                 if (touch.phase == TouchPhase.Ended)
                 {
-                    touchedUp = true;
+                    //touchedUp = true;
                     OnTouchUp?.Invoke();
                     break;
                 }
@@ -99,7 +99,7 @@ namespace JD.UI.Components
             
             if (OSUtils.IsDesktop && Mouse.current.leftButton.wasReleasedThisFrame)
             {
-                touchedUp = true;
+                //touchedUp = true;
                 OnTouchUp?.Invoke();
             }
         }

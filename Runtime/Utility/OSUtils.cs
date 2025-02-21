@@ -151,7 +151,9 @@ namespace JD.UI.Utility
             }
 #endif
             
+#pragma warning disable CS0162 // Unreachable code detected
             return DeviceType.Other;
+#pragma warning restore CS0162 // Unreachable code detected
         }
         
         private static float DeviceDiagonalSizeInInches()

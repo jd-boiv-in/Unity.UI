@@ -10,8 +10,8 @@ namespace JD.UI.Components
 {
     public class UIButton : UIBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
     {
-        public const float In = 0.10f;
-        public const float Out = 0.075f;
+        public new const float In = 0.10f;
+        public new const float Out = 0.075f;
 
         public float Scale = 0.90f;
         public float Ratio = 1.0f;
