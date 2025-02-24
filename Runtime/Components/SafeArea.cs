@@ -13,9 +13,17 @@ namespace JD.UI.Components
         private float _bottom;
         private Vector2Int _screen;
         private bool _update;
+        private bool _checkCanvas;
         
         private void UpdateRect()
         {
+            if (!HasCanvas && !_checkCanvas)
+            {
+                Canvas = gameObject.GetComponentInParent<Canvas>();
+                HasCanvas = Canvas != null;
+                _checkCanvas = true;
+            }
+            
             var safeArea = OSUtils.GetSafeArea();
             var scale = HasCanvas ? Canvas.scaleFactor : 1;
             
