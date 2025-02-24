@@ -98,7 +98,7 @@ namespace JD.UI.Components
             for (var i = 0; i < Images.Length; i++)
             {
                 var img = Images[i];
-                if (img != Image) continue; // TODO: Shouldn't this be `img != image`
+                if (img != Image) continue;
                 
                 ImagesColors[i] = image.color;
                 break;
