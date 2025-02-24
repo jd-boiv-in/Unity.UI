@@ -7,6 +7,7 @@ namespace JD.UI.Components
     public class SafeArea : MonoBehaviour
     {
         [HideInInspector] public Canvas Canvas;
+        [HideInInspector] public bool HasCanvas;
         [HideInInspector] public RectTransform Rect;
         
         private float _bottom;
@@ -16,7 +17,7 @@ namespace JD.UI.Components
         private void UpdateRect()
         {
             var safeArea = OSUtils.GetSafeArea();
-            var scale = Canvas.scaleFactor;
+            var scale = HasCanvas ? Canvas.scaleFactor : 1;
             
             var top = (Screen.height - safeArea.height - safeArea.y) / scale;
             var bottom = safeArea.y / scale;
@@ -48,6 +49,7 @@ namespace JD.UI.Components
         {
             Rect = gameObject.GetComponent<RectTransform>();
             Canvas = gameObject.GetComponentInParent<Canvas>();
+            HasCanvas = Canvas != null;
         }
     }
 }
