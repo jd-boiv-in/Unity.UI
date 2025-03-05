@@ -17,11 +17,14 @@ namespace JD.UI.Utility
         private static void ResetStatic()
         {
             ForceDesktop = false;
-            _checkDesktop = false;
-            _isDesktop = false;
-
+            
             _isTablet = false;
             _isTabletCheck = false;
+            
+#if (!UNITY_STANDALONE_WIN && !UNITY_STANDALONE_LINUX && !UNITY_STANDALONE_OSX) || UNITY_EDITOR
+            _checkDesktop = false;
+            _isDesktop = false;
+#endif
         }
 
         public static bool ForceDesktop;
