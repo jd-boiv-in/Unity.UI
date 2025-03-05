@@ -58,7 +58,7 @@ namespace JD.UI.Utility
             {
 #if (UNITY_STANDALONE_WIN || UNITY_STANDALONE_LINUX || UNITY_STANDALONE_OSX) && !UNITY_EDITOR
                 return true;
-#endif
+#else
 
                 if (!_checkDesktop)
                 {
@@ -67,6 +67,7 @@ namespace JD.UI.Utility
                 }
 
                 return _isDesktop;
+#endif
             }
         }
 
