@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "displayName": "UI",
   "description": "Some UI helper for Unity",
+  "license": "MIT",
   "dependencies": {
     "jd.boiv.in.colors": "1.0.0",
     "jd.boiv.in.extensions": "1.0.0",
