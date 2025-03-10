@@ -1,5 +1,5 @@
 ﻿using System;
-using JD.UI.Utility;
+using JD.OS;
 using UnityEngine;
 
 namespace JD.UI.Components

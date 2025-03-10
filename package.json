@@ -6,6 +6,7 @@
   "dependencies": {
     "jd.boiv.in.colors": "1.0.0",
     "jd.boiv.in.extensions": "1.0.0",
+    "jd.boiv.in.os": "1.0.0",
     "jd.boiv.in.text": "1.0.0",
     "jd.boiv.in.tween": "1.0.0"
   },

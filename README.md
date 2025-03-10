@@ -12,6 +12,7 @@ Add these dependencies to your `manifest.json`
     "jd.boiv.in.ui": "https://github.com/starburst997/Unity.UI.git",
     "jd.boiv.in.colors": "https://github.com/starburst997/Unity.Colors.git",
     "jd.boiv.in.extensions": "https://github.com/starburst997/Unity.Extensions.git",
+    "jd.boiv.in.os": "https://github.com/starburst997/Unity.OS.git",
     "jd.boiv.in.text": "https://github.com/starburst997/Unity.Text.git",
     "jd.boiv.in.tween": "https://github.com/starburst997/Unity.Tween.git"
   }
