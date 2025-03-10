@@ -1,6 +1,6 @@
 ﻿using System;
+using JD.Colors;
 using JD.Tween;
-using JD.UI.Utility.Extensions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;

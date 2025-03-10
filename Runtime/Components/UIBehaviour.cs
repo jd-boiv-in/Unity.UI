@@ -2,10 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using JD.Colors;
 using JD.Extensions;
 using JD.Text;
 using JD.Tween;
-using JD.UI.Utility.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
