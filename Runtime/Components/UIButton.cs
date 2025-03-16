@@ -177,10 +177,10 @@ namespace JD.UI.Components
                 // If we didn't move the pointer too far from original position
                 // This is to fix the issue where because of the scale down tween,
                 // the hit area is no longer under the pointer...
-                var start = UIGlobal.Camera.ScreenToWorldPoint(_position);
-                var end = UIGlobal.Camera.ScreenToWorldPoint(eventData.position);
+                var start = NormalizeToScreen(_position); //UIGlobal.Camera.ScreenToWorldPoint(_position);
+                var end = NormalizeToScreen(eventData.position); //UIGlobal.Camera.ScreenToWorldPoint(eventData.position);
                 var diff = end - start;
-                if (diff.sqrMagnitude < 0.015f)
+                if (diff.magnitude < 0.01f) // 0.015f
                 {
                     _clicked = true;
                     Press();
@@ -189,6 +189,11 @@ namespace JD.UI.Components
             
             if (_pressed) OnRelease?.Invoke();
             _pressed = false;
+        }
+
+        private Vector2 NormalizeToScreen(Vector2 position)
+        {
+            return new Vector2(position.x / Screen.width, position.y / Screen.height);
         }
         
         private void TweenDown()
