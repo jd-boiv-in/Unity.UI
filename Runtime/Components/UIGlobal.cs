@@ -2,11 +2,14 @@
 using JD.OS;
 using JD.Tween;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
 using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 using TouchPhase = UnityEngine.InputSystem.TouchPhase;
+#endif
 
 namespace JD.UI.Components
 {
@@ -73,7 +76,9 @@ namespace JD.UI.Components
             
             Tweens = Tweens.Load();
             
+#if ENABLE_INPUT_SYSTEM
             EnhancedTouchSupport.Enable();
+#endif
             
 #if UNITY_IOS || UNITY_ANDROID
             //Application.targetFrameRate = 60;
@@ -82,13 +87,26 @@ namespace JD.UI.Components
         
         private void Update()
         {
+#if ENABLE_INPUT_SYSTEM
+            var mouseReleased = Mouse.current.leftButton.wasReleasedThisFrame;
+            var touches = Touch.activeTouches;
+            var touchesCount = touches.Count;
+#else
+            var mouseReleased = Input.GetMouseButtonUp(0);
+            var touchesCount = Input.touchCount;
+#endif
+            
             // Listens for touch up event and broadcast it globally
             // Useful to auto-hide tooltips
             // TODO: Do not use delegate to prevent alloc?
             //var touchedUp = false;
-            for (var i = 0; i < Touch.activeTouches.Count; i++)
+            for (var i = 0; i < touchesCount; i++)
             {
+#if ENABLE_INPUT_SYSTEM
                 var touch = Touch.activeTouches[i];
+#else
+                var touch = Input.GetTouch(i);
+#endif
                 if (touch.phase == TouchPhase.Ended)
                 {
                     //touchedUp = true;
@@ -97,7 +115,7 @@ namespace JD.UI.Components
                 }
             }
             
-            if (OSUtils.IsDesktop && Mouse.current.leftButton.wasReleasedThisFrame)
+            if (OSUtils.IsDesktop && mouseReleased)
             {
                 //touchedUp = true;
                 OnTouchUp?.Invoke();
@@ -108,7 +126,11 @@ namespace JD.UI.Components
         {
             Tweens.Update();
 
+#if ENABLE_INPUT_SYSTEM
             if (Keyboard.current.escapeKey.wasPressedThisFrame)
+#else
+            if (Input.GetKeyUp(KeyCode.Escape))
+#endif
                 Screen.fullScreen = false;
         }
 
