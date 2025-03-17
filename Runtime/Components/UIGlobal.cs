@@ -84,6 +84,16 @@ namespace JD.UI.Components
             //Application.targetFrameRate = 60;
 #endif
         }
+
+        public void ChangeHandCursor()
+        {
+            //WindowsCursor.Change(WindowsCursors.Hand);
+        }
+        
+        public void ChangeArrowCursor()
+        {
+            //WindowsCursor.Change(WindowsCursors.StandardArrow);
+        }
         
         private void Update()
         {
@@ -132,6 +142,8 @@ namespace JD.UI.Components
             if (Input.GetKeyUp(KeyCode.Escape))
 #endif
                 Screen.fullScreen = false;
+            
+            //WindowsCursor.Update();
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

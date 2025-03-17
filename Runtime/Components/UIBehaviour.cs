@@ -305,7 +305,7 @@ namespace JD.UI.Components
             if (!HasRect /*|| !Enabled*/) return;
 
             _hasRectTween = true;
-            Rect.TweenScale(new Vector3(relative ? RectLocalScale.x * scale.x : scale.x, relative ? RectLocalScale.y * scale.y : scale.y, 1f), duration).SetEase(ease);
+            Rect.TweenScale(new Vector3(relative ? RectLocalScale.x * scale.x : scale.x, relative ? RectLocalScale.y * scale.y : scale.y, 1f), duration, ease, false);
         }
 
         public virtual void FadeAllIn(float duration = DefaultIn)
