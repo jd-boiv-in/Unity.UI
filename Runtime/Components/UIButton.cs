@@ -305,10 +305,10 @@ namespace JD.UI.Components
                 // If we didn't move the pointer too far from original position
                 // This is to fix the issue where because of the scale down tween,
                 // the hit area is no longer under the pointer...
-                var start = NormalizeToScreen(_position); //UIGlobal.Camera.ScreenToWorldPoint(_position);
-                var end = NormalizeToScreen(eventData.position); //UIGlobal.Camera.ScreenToWorldPoint(eventData.position);
+                var start = NormalizeToScreen(_position);
+                var end = NormalizeToScreen(eventData.position);
                 var diff = end - start;
-                if (diff.magnitude < 0.01f) // 0.015f
+                if (diff.sqrMagnitude < 0.0001f)
                 {
                     _clicked = true;
                     Press();
