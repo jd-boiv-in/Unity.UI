@@ -298,8 +298,7 @@ namespace JD.UI.Components
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            if (_inside) TweenHover(true);
-            else TweenUp();
+            TweenUp();
             
             if (_pressed && eventData != null && !eventData.dragging && Interactable)
             {
