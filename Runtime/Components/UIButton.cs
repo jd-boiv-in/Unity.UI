@@ -65,15 +65,15 @@ namespace JD.UI.Components
         
         [FoldoutGroup("Images"), PreviewField(ObjectFieldAlignment.Left)]
         public Sprite Normal;
-        public bool HasNormalSprite;
+        [HideInInspector] public bool HasNormalSprite;
         
         [FoldoutGroup("Images"), PreviewField(ObjectFieldAlignment.Left)]
         public Sprite Down;
-        public bool HasDownSprite;
+        [HideInInspector] public bool HasDownSprite;
         
         [FoldoutGroup("Images"), PreviewField(ObjectFieldAlignment.Left)]
         public Sprite Select;
-        public bool HasSelectSprite;
+        [HideInInspector] public bool HasSelectSprite;
         
         [PropertySpace(8, 8)]
         public Button.ButtonClickedEvent OnClick = new();
