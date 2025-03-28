@@ -248,24 +248,22 @@ namespace JD.UI.Components
         
         public void OnPointerEnter(PointerEventData eventData)
         {
-#if UNITY_IOS || UNITY_ANDROID
-            return;
-#endif
+#if !UNITY_IOS && !UNITY_ANDROID
             if (_inside) return;
             _inside = true;
             
             if (!_down && !Holding) TweenHover(true);
+#endif
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-#if UNITY_IOS || UNITY_ANDROID
-            return;
-#endif
+#if !UNITY_IOS && !UNITY_ANDROID
             if (!_inside) return;
             _inside = false;
             
             if (!_down && !Holding) TweenUp(true);
+#endif
         }
         
         public void OnPointerClick(PointerEventData eventData)
